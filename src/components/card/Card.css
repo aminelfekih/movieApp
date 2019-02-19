@@ -1,0 +1,30 @@
+.Card {
+    min-width: 300px;
+    height: 250px;
+    background-color: #FFF;
+    margin: 20px;
+    padding: 10px;
+    border: 3px solid burlywood;
+    position:relative;
+}
+.delete {
+    text-align: center;
+    background-color: #dc3545;
+    height: 25px;
+}
+.delButton {
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
+.like-dislike-ratio {
+    text-align: center;
+}
+.like-button, .dislike-button {
+    margin: 10px
+}
+.toggle-like {
+    position:absolute;
+    bottom:0px;
+    left: 0px;
+}
