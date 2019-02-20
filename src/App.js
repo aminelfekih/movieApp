@@ -68,7 +68,7 @@ class App extends Component {
     )
   }
   pagination() {
-    const { listMovies, cardsPerPage, filter } = this.state;
+    const { listMovies, cardsPerPage, currentPage, filter } = this.state;
     const filtredMovies = this.filterByCategory(listMovies,filter)
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(filtredMovies.length / cardsPerPage); i++) {
@@ -76,6 +76,11 @@ class App extends Component {
     }
     return(
       <div className="pagination">
+          <button disabled={currentPage === 1}
+              onClick={() => this.setState({currentPage: currentPage - 1})}
+          >
+            Précédent
+          </button>
           {pageNumbers.map(
             number => {
               return (
@@ -88,6 +93,11 @@ class App extends Component {
                 </button>
             )}
           )}
+          <button disabled={currentPage === pageNumbers.length}
+            onClick={() => this.setState({currentPage: currentPage + 1})}
+          >
+            Suivant
+          </button>
       </div>
     )
   }
